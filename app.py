@@ -403,7 +403,13 @@ def show_penny_chat():
     api_key = os.getenv("OPENAI_API_KEY")
 
     if not api_key:
-        st.error("OPENAI_API_KEY was not found. Check your .env file.")
+        try:
+            api_key = st.secrets.get("OPENAI_API_KEY", None)
+        except Exception:
+            api_key = None
+
+    if not api_key:
+        st.error("OPENAI_API_KEY was not found. Check your .env file or Streamlit Secrets.")
         st.stop()
 
     # 1. Setup the objects
