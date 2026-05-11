@@ -108,7 +108,6 @@ class SalonContextStore:
 
         return json.dumps(context, indent=2)
 
-
 class ChatLoggerStore:
     def __init__(self, filepath: str):
         self.filepath = Path(filepath)
@@ -169,4 +168,54 @@ class ChatLoggerStore:
                 kept_logs.append(log)
 
         self.save_logs(kept_logs)
+class SalonAssistantBot:
+    def __init__(self, api_key: str, context_data: str, role: str):
+        self.client = OpenAI(api_key=api_key)
+        self.context_data = context_data
+        self.role = role
 
+    def build_ai_prompt(self) -> str:
+        """
+        Builds the hidden instructions and salon context for the AI.
+        This is prompt design. It is not just string formatting.
+        """
+
+        return (
+            "You are Penny the Polish Pro, the AI salon assistant for Polished to Perfection.\n"
+            "You help users understand salon appointments, booking, cancellations, services, rewards, feedback, nail techs, and inventory when appropriate.\n\n"
+
+            f"The current user's role is: {self.role}.\n\n"
+
+            "Role rules:\n"
+            "- If the user is a Customer, answer questions about their own appointments, services, rewards, feedback, booking steps, cancellation steps, and nail tech information.\n"
+            "- If the user is an Employee, answer questions about assigned appointments, inventory, low stock, customer feedback, service information, and salon operations.\n"
+            "- Do not show a customer private information about other customers.\n"
+            "- If the answer is not in the salon data, say you do not have enough information from the app data.\n"
+            "- Do not make up appointment dates, times, prices, customers, employees, inventory quantities, or reward points.\n"
+            "- Keep answers clear, friendly, and useful.\n\n"
+
+            "SALON DATA:\n"
+            f"{self.context_data}"
+        )
+
+    def get_ai_response(self, chat_history: list) -> str:
+        """
+        Combines hidden instructions with visible chat history, then calls the AI.
+        """
+
+        ai_prompt = self.build_ai_prompt()
+
+        ai_prompt_message = [{
+            "role": "system",
+            "content": ai_prompt
+        }]
+
+        messages = ai_prompt_message + chat_history
+
+        response = self.client.chat.completions.create(
+            model="gpt-5-mini",
+            messages=messages,
+            temperature=0.2
+        )
+
+        return response.choices[0].message.content
