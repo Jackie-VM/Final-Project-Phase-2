@@ -1221,14 +1221,20 @@ else:
                 with st.container(border=True):
                     st.markdown("### Assigned Appointments")
 
-                    if len(employee_appts) > 0:
-                        for appt in employee_appts:
+                    active_employee_appts = []
+
+                    for appt in employee_appts:
+                        if appt.get("status") not in ["Completed", "Canceled"]:
+                            active_employee_appts.append(appt)
+
+                    if len(active_employee_appts) > 0:
+                        for appt in active_employee_appts:
                             st.markdown(
                                 f"**{appt['client']}** | {appt['service']} | {appt['date']} at {appt['time']} | {appt.get('status', 'Scheduled')}"
                             )
 
                     else:
-                        st.info("No appointments assigned yet.")
+                        st.info("No active appointments assigned yet.")
 
             with col2:
                 with st.container(border=True):
