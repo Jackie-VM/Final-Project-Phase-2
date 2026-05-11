@@ -1,0 +1,32 @@
+[
+  {
+    "user_email": "customer@example.com",
+    "user_message": "what appointments do i have?",
+    "assistant_message": "You have one upcoming appointment:\n\n- Appointment ID: 7  \n- Service: Acrylic Full Set  \n- Price: $50  \n- Tip: $10.00  \n- Total charge: $60.00  \n- Date: 2026-05-18  \n- Time: 11:00 AM  \n- Technician: Jackie  \n- Status: Scheduled\n\nWould you like to reschedule, cancel, or do anything else with this appointment?"
+  },
+  {
+    "user_email": "customer@example.com",
+    "user_message": "who are the nail techs here?",
+    "assistant_message": "Our nail techs are:\n\n- Marissa  \n- Jackie  \n- Eesha Shahi\n\nI don't have additional details (schedules or specialties) in the app data. Would you like me to check availability or book/reschedule with a specific tech?"
+  },
+  {
+    "user_email": "employee@example.com",
+    "user_message": "what appointments are upcoming?",
+    "assistant_message": "You currently have no upcoming appointments assigned to you.\n\nWould you like me to:\n- Check the salon-wide schedule for available bookings on a specific date/time?\n- Assign or create a new appointment for you?\n- Show inventory or low-stock items so you can plan for upcoming services?\n\nTell me which option or a date/time and I\u2019ll pull the details."
+  },
+  {
+    "user_email": "employee@example.com",
+    "user_message": "what inventory items are most used?",
+    "assistant_message": "I don\u2019t have enough information in the app data to say which items are actually \u201cmost used\u201d \u2014 there are no usage/consumption logs or sales-to-inventory links in the data provided.\n\nWhat I can do now:\n- Show current inventory and low-stock thresholds so you can see which items will need reordering soon.\n- Suggest how to track usage going forward (reports, POS integration, manual logs).\n- Create reorder suggestions or set up alerts for items approaching low stock (if you want).\n\nCurrent inventory (qty / low stock limit \u2014 supplier):\n- Gel Polish: 11 / 5 \u2014 SalonPro Supplies\n- Acrylic Powder: 6 / 3 \u2014 Beauty Warehouse\n- Cuticle Oil: 13 / 5 \u2014 Nail Essentials Co.\n- Nail Files: 23 / 10 \u2014 SalonPro Supplies\n- Cotton Pads: 26 / 12 \u2014 Beauty Warehouse\n\nNotes:\n- None of the items are currently below their low-stock limit.\n- Acrylic Powder has the smallest buffer (6 on hand vs. low limit 3), so it will be the first to reach low-stock if usage continues.\n\nIf you want, I can:\n- Start tracking item usage per service (recommend integrating with POS or logging usage).\n- Generate a usage report for a future date range (once usage data is available).\n- Create reorder suggestions and draft purchase orders to suppliers listed above.\n\nWhich would you like me to do next?"
+  },
+  {
+    "user_email": "employee@example.com",
+    "user_message": "tell me the current inventory",
+    "assistant_message": "Current inventory (from the salon app):\n\n- ID 1 \u2014 Gel Polish | Category: Polish | Quantity: 11 | Low-stock limit: 5 | Supplier: SalonPro Supplies\n- ID 2 \u2014 Acrylic Powder | Category: Acrylic | Quantity: 6 | Low-stock limit: 3 | Supplier: Beauty Warehouse\n- ID 3 \u2014 Cuticle Oil | Category: Nail Care | Quantity: 13 | Low-stock limit: 5 | Supplier: Nail Essentials Co.\n- ID 4 \u2014 Nail Files | Category: Tools | Quantity: 23 | Low-stock limit: 10 | Supplier: SalonPro Supplies\n- ID 5 \u2014 Cotton Pads | Category: Supplies | Quantity: 26 | Low-stock limit: 12 | Supplier: Beauty Warehouse\n\nSummary:\n- No items are currently below their low-stock limit.\n- Acrylic Powder has the smallest buffer (6 on hand vs. limit 3) and will likely need reordering first if usage continues.\n\nWould you like me to create a reorder suggestion/P.O., set low-stock alerts, or start tracking usage per service?"
+  },
+  {
+    "user_email": "employee@example.com",
+    "user_message": "what item will likely need to be reorered first?",
+    "assistant_message": "Acrylic Powder (ID 2) will likely need to be reordered first. It has the smallest buffer: quantity 6 vs. low-stock limit 3 (difference = 3).  \n\nWould you like me to:\n- Draft a reorder suggestion / purchase order to Beauty Warehouse (tell me how many units to order),  \n- Set a low-stock alert for Acrylic Powder, or  \n- Increase the low-stock limit so you get earlier warnings?"
+  }
+]

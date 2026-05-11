@@ -11,7 +11,7 @@
         "id": 2,
         "item_name": "Acrylic Powder",
         "category": "Acrylic",
-        "quantity": 7,
+        "quantity": 6,
         "low_stock_limit": 3,
         "supplier": "Beauty Warehouse"
     },
@@ -27,7 +27,7 @@
         "id": 4,
         "item_name": "Nail Files",
         "category": "Tools",
-        "quantity": 24,
+        "quantity": 23,
         "low_stock_limit": 10,
         "supplier": "SalonPro Supplies"
     },
@@ -35,7 +35,7 @@
         "id": 5,
         "item_name": "Cotton Pads",
         "category": "Supplies",
-        "quantity": 27,
+        "quantity": 26,
         "low_stock_limit": 12,
         "supplier": "Beauty Warehouse"
     }

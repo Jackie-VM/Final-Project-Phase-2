@@ -68,5 +68,20 @@
         "status": "Scheduled",
         "created_at": "2026-05-10 22:31:51.050692",
         "canceled_at": ""
+    },
+    {
+        "id": 7,
+        "service": "Acrylic Full Set",
+        "price": 50,
+        "tip_amount": 10.0,
+        "total_charge": 60.0,
+        "date": "2026-05-18",
+        "time": "11:00 AM",
+        "employee": "Jackie",
+        "client": "Test Customer",
+        "client_email": "customer@example.com",
+        "status": "Scheduled",
+        "created_at": "2026-05-11 02:10:41.525517",
+        "canceled_at": ""
     }
 ]

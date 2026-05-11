@@ -215,7 +215,6 @@ class SalonAssistantBot:
         response = self.client.chat.completions.create(
             model="gpt-5-mini",
             messages=messages,
-            temperature=0.2
         )
 
         return response.choices[0].message.content
